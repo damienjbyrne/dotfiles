@@ -1,3 +1,6 @@
+"Activate pathogen to load the plugins
+execute pathogen#infect()
+
 "turn off vi compatibility
 set nocompatible
 
@@ -21,18 +24,12 @@ set tabstop=2
 
 "Setting the status line
 set laststatus=2
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 
+" use nice patched fonts for airline
+let g:airline_powerline_fonts = 1
+
+" use a more developed netrw config
+let g:netrw_liststyle=3
 
 " for html/rb files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
